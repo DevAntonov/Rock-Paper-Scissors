@@ -2,7 +2,7 @@ import tkinter
 from random import choice
 
 
-window = Tk()
+window = tkinter.Tk()
 window.title("Rock, paper, scissors")
 
 choices = ["Rock", "Paper", "Scissors"]
@@ -11,7 +11,7 @@ computer_score = tkinter.IntVar()
 result = tkinter.StringVar()
 
 
----------------Game_functions---------------
+#---------------Game_functions---------------
 
 def if_rock_is_picked():
     computer_pick = choice(choices)
@@ -59,12 +59,12 @@ def if_scissors_is_picked():
 
 
 
----------------GUI---------------
+#---------------GUI---------------
 
 
 
 
----------------Main---------------
+#---------------Main---------------
 
 
 window.mainloop()
