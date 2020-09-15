@@ -6,6 +6,7 @@ from PIL import Image, ImageTk
 window = tkinter.Tk()
 window.geometry("880x660")
 window.title("Rock, paper, scissors")
+window.config(bg="gray")
 
 choices = ["Rock", "Paper", "Scissors"]
 player_score = IntVar()
@@ -104,6 +105,15 @@ def if_scissors_is_picked():
         player_score_entry.config(bg="yellow")
         computer_score_entry.config(bg="yellow")
 
+def reset():
+    player_score.set(0)
+    computer_score.set(0)
+    result.set("")
+    player_last_pick.set("")
+    computer_last_pick.set("")
+    player_score_entry.config(bg="yellow")
+    computer_score_entry.config(bg="yellow")
+
 def exit_game():
     window.destroy()
 
@@ -132,16 +142,26 @@ computer_score_entry.place(relx=0.8, rely=0.1, anchor=CENTER)
 
 
 player_last_pick_entry = Entry(window, textvariable=player_last_pick, width=10, font=("Arial", 20), relief=GROOVE)
-player_last_pick_entry.place(relx=0.35, rely=0.8, anchor=CENTER)
+player_last_pick_entry.place(relx=0.55, rely=0.7, anchor=CENTER)
 
 computer_last_pick_entry = Entry(window, textvariable=computer_last_pick, width=10, font=("Arial", 20), relief=GROOVE)
-computer_last_pick_entry.place(relx=0.65, rely=0.8, anchor=CENTER)
+computer_last_pick_entry.place(relx=0.55, rely=0.8, anchor=CENTER)
+
+plr_txt = Label(window, text="You: ", font=("Arial", 20), relief=GROOVE)
+plr_txt.place(relx=0.404, rely=0.7, anchor=CENTER)
+
+com_txt = Label(window, text="Com: ", font=("Arial", 20), relief=GROOVE)
+com_txt.place(relx=0.4, rely=0.8, anchor=CENTER)
+
+reset_button = Button(window, text="Reset", width=10, height=2, command=reset, bg="yellow", activebackground="red", relief=GROOVE)
+reset_button.place(relx=0.45, rely=0.9, anchor=CENTER)
 
 exit_button = Button(window, text="Exit", width=10, height=2, command=exit_game, bg="red", activebackground="red", relief=GROOVE)
-exit_button.place(relx=0.5, rely=0.9, anchor=CENTER)
+exit_button.place(relx=0.55, rely=0.9, anchor=CENTER)
 
 
 #---------------Main---------------
+
 
 
 window.mainloop()
