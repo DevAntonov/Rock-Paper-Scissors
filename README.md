@@ -1,4 +1,4 @@
-# Rock-Paper-Scissors
+# Rock-Paper-Scissors evala
 Rock, paper, scissors game with tkinter
 It will count score and show what player and computer chosed the previous round
 
